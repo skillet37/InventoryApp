@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:InventoryApplication"
              mc:Ignorable="d" 
              d:DesignHeight="540" d:DesignWidth="1010">
-    <Grid Background="#FF6AFF85">
+    <Grid Background="#FFD8D5D5">
             
     </Grid>
 </UserControl>

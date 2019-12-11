@@ -7,16 +7,15 @@
              mc:Ignorable="d" 
              d:DesignHeight="540" d:DesignWidth="1010">
     <Grid Background="#FFD8D5D5">
-        <ListView Name="InventoryList" HorizontalAlignment="Left" Height="443.403" Margin="113.343,16.867,0,0" VerticalAlignment="Top" Width="871.815">
+        <ListView Name="InventoryList" HorizontalAlignment="Left" Height="520" Margin="10,10,0,0" VerticalAlignment="Top" Width="990">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Item Type"/>
-                    <GridViewColumn Header="Item Name"/>
-                    <GridViewColumn Header="Serial Number"/>
-                    <GridViewColumn Header="Location"/>
-                    <GridViewColumn Header="Checked Out By"/>
-                    <GridViewColumn Header="Checkout Date"/>
-
+                    <GridViewColumn Header="Item Type" DisplayMemberBinding="{Binding Type}"/>
+                    <GridViewColumn Header="Item Name" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Serial Number" DisplayMemberBinding="{Binding SerialNo}"/>
+                    <GridViewColumn Header="Location" DisplayMemberBinding="{Binding Location}"/>
+                    <GridViewColumn Header="Checked Out By" DisplayMemberBinding="{Binding CODate}"/>
+                    <GridViewColumn Header="Checkout Date" DisplayMemberBinding="{Binding RetDate}"/>
                 </GridView>
             </ListView.View>
         </ListView>

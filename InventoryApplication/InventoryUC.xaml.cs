@@ -1,16 +1,18 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
+using System.Threading;
+using System.ComponentModel;
 
 class InventoryItem
 {
     public string Name { get; set; }
     public string Type { get; set; }
-    public string SerialNo { get; set; }
+    public int SerialNo { get; set; }
     public string Location { get; set; }
+    public string COBy { get; set; }
     public string CODate { get; set; }
-    public string RetDate { get; set; }
 }
-
 
 namespace InventoryApplication
 {
@@ -24,11 +26,38 @@ namespace InventoryApplication
             InitializeComponent();
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        BackgroundWorker worker;
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            InventoryList.Items.Add(new InventoryItem() { Name = "M16", Type = "Weapon", SerialNo = "X1234", Location = "Shelf 1, Spot A", CODate = "", RetDate = "" });
-            InventoryList.Items.Add(new InventoryItem() { Name = "Beretta", Type = "Weapon", SerialNo = "HG9876", Location = "Shelf 10, Spot C", CODate = "", RetDate = "" });
-            InventoryList.Items.Add(new InventoryItem() { Name = "Backpack", Type = "Accessory", SerialNo = "X1DD33", Location = "Shelf 2, Spot B", CODate = "", RetDate = "" });
+            worker = new BackgroundWorker();
+
+            worker.DoWork += new DoWorkEventHandler(Update_UI);
+
+            worker.RunWorkerAsync();
+        }
+
+        private void Update_UI(object sender, DoWorkEventArgs e)
+        {
+            using (var dbh = new DBHandler())
+            {
+                var values = dbh.fillInventory();
+                while (values.Read())
+                {
+                    inventoryList.Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority.Normal, new Action(delegate ()
+                    {
+                        inventoryList.Items.Add(new InventoryItem() { SerialNo = values.GetInt32(0), Name = values.GetString(1), Type = values.GetString(2), Location = values.GetString(3) });
+                    }));
+                }
+            }
+        }
+
+        private void UserControl_Unloaded(object sender, RoutedEventArgs e)
+        {
+            if (worker.IsBusy)
+            {
+                worker.Dispose();
+            }
         }
     }
 }

@@ -5,9 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:InventoryApplication"
              mc:Ignorable="d" 
-             d:DesignHeight="540" d:DesignWidth="1010">
+             d:DesignHeight="540" d:DesignWidth="1010" Loaded="UserControl_Loaded" Unloaded="UserControl_Unloaded">
     <Grid Background="#FFD8D5D5">
-        <ListView HorizontalAlignment="Left" Height="475.11" Margin="-0.963,66,0,-1.11" VerticalAlignment="Top" Width="321.521" RenderTransformOrigin="0.5,0.5">
+        <ListView x:Name="userList" HorizontalAlignment="Left" Height="475.11" Margin="-0.963,66,0,-1.11" VerticalAlignment="Top" Width="321.521" RenderTransformOrigin="0.5,0.5">
             <ListView.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -18,9 +18,9 @@
             </ListView.RenderTransform>
             <ListView.View>
                 <GridView AllowsColumnReorder="False">
-                    <GridViewColumn Header="ID" Width="50"/>
-                    <GridViewColumn Header="Rank" Width="75"/>
-                    <GridViewColumn Header="Last Name" Width="Auto"/>
+                    <GridViewColumn Header="ID" DisplayMemberBinding="{Binding ID}" Width="50"/>
+                    <GridViewColumn Header="Rank" DisplayMemberBinding="{Binding Rank}" Width="75"/>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="190"/>
                 </GridView>
             </ListView.View>
         </ListView>

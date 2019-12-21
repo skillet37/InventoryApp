@@ -18,9 +18,9 @@ namespace InventoryApplication
     /// <summary>
     /// Interaction logic for CheckoutUC.xaml
     /// </summary>
-    public partial class CheckoutUC : UserControl
+    public partial class CheckoutView : UserControl
     {
-        public CheckoutUC()
+        public CheckoutView()
         {
             InitializeComponent();
         }

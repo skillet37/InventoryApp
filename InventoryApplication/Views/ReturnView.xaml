@@ -1,12 +1,12 @@
-﻿<UserControl x:Class="InventoryApplication.CheckoutUC"
+﻿<UserControl x:Class="InventoryApplication.ReturnView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:InventoryApplication"
-             mc:Ignorable="d" 
+             mc:Ignorable="d"
              d:DesignHeight="540" d:DesignWidth="1010">
     <Grid Background="#FFD8D5D5">
-            
+        <TextBlock HorizontalAlignment="Left" Height="132.019" Margin="26.972,39.038,0,0" TextWrapping="Wrap" Text="Show list of currently checked out items.&#x0a;User should be able to:&#x0a;1. Select an item from the list&#x0a;2. Scan an item to return it&#x0a;3. Sort by user id and return 1 or all items" VerticalAlignment="Top" Width="352.051" FontSize="16"/>
     </Grid>
 </UserControl>

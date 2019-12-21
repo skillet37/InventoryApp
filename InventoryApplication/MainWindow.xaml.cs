@@ -39,21 +39,21 @@ namespace InventoryApplication
             switch (((ListViewItem)((ListView)sender).SelectedItem).Name)
             {
                 case "MenuCheckout":
-                    usc = new CheckoutUC();
+                    usc = new CheckoutView();
                     GridMain.Children.Add(usc);
                     break;
                 case "MenuInventory":
-                    usc = new InventoryUC();
+                    usc = new InventoryView();
                     GridMain.Children.Add(usc);
                     break;
                 case "MenuUserMan":
-                    usc = new UserUC();
+                    usc = new UserView();
                     GridMain.Children.Add(usc);
                     break;
-                //case "MenuReturn":
-                //usc = new InventoryUC();
-                // GridMain.Children.Add(usc);
-                // break;
+                case "MenuReturn":
+                    usc = new ReturnView();
+                    GridMain.Children.Add(usc);
+                    break;
                 default:
                     break;
             }

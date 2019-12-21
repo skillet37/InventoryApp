@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace InventoryApplication
 {
     /// <summary>
-    /// Interaction logic for StartScreen.xaml
+    /// Interaction logic for ReturnUC.xaml
     /// </summary>
-    public partial class StartScreen : Page
+    public partial class ReturnView : UserControl
     {
-        public StartScreen()
+        public ReturnView()
         {
             InitializeComponent();
         }

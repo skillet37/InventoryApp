@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="InventoryApplication.CheckoutView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:InventoryApplication"
+             mc:Ignorable="d" 
+             d:DesignHeight="540" d:DesignWidth="1010">
+    <Grid Background="#FFD8D5D5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="53*"/>
+            <RowDefinition Height="217*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Step 1: Select an individual from list or scan their ID code" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Step 2: Show list of items in currently in inventory and not checked out. Allow checkout by selection, or scanning of item barcode" HorizontalAlignment="Left" Margin="10,38.96,0,0" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="32.365,15.331,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="1"><Run Text="***"/><Run Text="Do this either by having each step in a new stackpanel and just hiding or just a whole new usercontrol"/></TextBlock>
+
+    </Grid>
+</UserControl>

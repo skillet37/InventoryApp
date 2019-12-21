@@ -1,19 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.SQLite;
-using System.Threading;
 
 namespace InventoryApplication
 {
+    /// <summary>
+    /// Handles transactions with the SQL Database. Implements IDisposable to allow
+    /// automatic disposal of the connection when the using statement is utilised.
+    /// </summary>
     class DBHandler : IDisposable
     {
-
         private readonly SQLiteConnection _conn;
         private static string _connString;
         
+        /// <summary>
+        /// Constructor opens the connection
+        /// </summary>
         public DBHandler()
         {
             _connString = "Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "\\ims.db3";
@@ -47,6 +48,11 @@ namespace InventoryApplication
 
         }
 
+        // TODO: Change to incorporate search function
+        /// <summary>
+        /// Returns a list of all users in the database.
+        /// </summary>
+        /// <returns>SQLiteDataReader containing all users in database</returns>
         public SQLiteDataReader fillUsers()
         {
             SQLiteDataReader sqlReader;
@@ -58,6 +64,11 @@ namespace InventoryApplication
             }
         }
 
+        // TODO: Change to incorporate search function
+        /// <summary>
+        /// Returns a list of all items in the inventory
+        /// </summary>
+        /// <returns>SQLiteDataReader containing all items in the database</returns>
         public SQLiteDataReader fillInventory()
         {
                 SQLiteDataReader sqlReader;
@@ -76,7 +87,10 @@ namespace InventoryApplication
 
         #region IDisposable Support
         private bool disposedValue = false; // To detect redundant calls
-
+        /// <summary>
+        /// Auto generated dispose function for IDisposal use.
+        /// </summary>
+        /// <param name="disposing"></param>
         protected virtual void Dispose(bool disposing)
         {
             if (!disposedValue)

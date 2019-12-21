@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="InventoryApplication.UserView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:InventoryApplication"
+             mc:Ignorable="d" 
+             d:DesignHeight="540" d:DesignWidth="1010" Loaded="UserControl_Loaded">
+    <Grid Background="#FFD8D5D5">
+        <Grid>
+            <ListView x:Name="userList" HorizontalAlignment="Left" Height="504.777" Margin="1.342,33.667,0,0" VerticalAlignment="Top" Width="1006.431" RenderTransformOrigin="0.5,0.5">
+                <ListView.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="-0.108"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-0.335"/>
+                    </TransformGroup>
+                </ListView.RenderTransform>
+                <ListView.View>
+                    <GridView AllowsColumnReorder="False">
+                        <GridViewColumn Header="ID" DisplayMemberBinding="{Binding ID}" Width="50"/>
+                        <GridViewColumn Header="Rank" DisplayMemberBinding="{Binding Rank}" Width="75"/>
+                        <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="190"/>
+                        <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Email}" Width="190"/>
+                        <GridViewColumn Header="Mobile Number" DisplayMemberBinding="{Binding Mobile}" Width="230"/>
+                        <GridViewColumn Header="Has Items?" DisplayMemberBinding="{Binding ItemsOut}" Width="150"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <Label Content="Filter:" HorizontalAlignment="Left" Margin="3.666,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.245,0.543" FontSize="16" Foreground="#FF31577E" FontFamily="Segoe UI Semibold"/>
+            <TextBox HorizontalAlignment="Left" Height="29.28" Margin="175.677,10,0,0" TextWrapping="Wrap" Text="Delete This Text" VerticalAlignment="Top" Width="121" FontSize="16" RenderTransformOrigin="-0.689,1.819"/>
+            <ComboBox HorizontalAlignment="Left" Margin="57.677,6,0,0" VerticalAlignment="Top" Width="61" SelectedIndex="0" FontSize="16" OpacityMask="Black">
+                <ListBoxItem Content="ID"/>
+                <ListBoxItem Content="Name"/>
+            </ComboBox>
+            <Label Content="using" HorizontalAlignment="Left" Margin="123.677,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.245,0.543" FontSize="16" Width="47" Foreground="#FF31577E" FontFamily="Segoe UI Semibold"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="280" Margin="295.324,97,0,0" VerticalAlignment="Top" Width="314.676">
+            <Label Content="Create a New User" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Semibold" FontSize="20"/>
+            <Label Content="Name:" HorizontalAlignment="Left" Margin="17.003,49.6,0,0" VerticalAlignment="Top" FontSize="16"/>
+            <Label Content="Rank:" HorizontalAlignment="Left" Margin="24.543,83.88,0,0" VerticalAlignment="Top" FontSize="16"/>
+            <Label Content="ID:" HorizontalAlignment="Left" Margin="43.783,118.16,0,0" VerticalAlignment="Top" FontSize="16" RenderTransformOrigin="0.497,2.424"/>
+            <Label Content="Email:" HorizontalAlignment="Left" Margin="21.5,152.44,0,0" VerticalAlignment="Top" FontSize="16"/>
+            <Label Content="Mobile:" HorizontalAlignment="Left" Margin="10,186.72,0,0" VerticalAlignment="Top" FontSize="16" RenderTransformOrigin="0.548,3.24"/>
+            <TextBox HorizontalAlignment="Left" Height="29.28" Margin="89.155,48.6,0,0" TextWrapping="Wrap" FontSize="17" VerticalAlignment="Top" Width="204.495"/>
+            <TextBox HorizontalAlignment="Left" Height="29.28" Margin="89.155,82.88,0,0" TextWrapping="Wrap" FontSize="17" VerticalAlignment="Top" Width="204.495"/>
+            <TextBox HorizontalAlignment="Left" Height="29.28" Margin="89.155,117.16,0,0" TextWrapping="Wrap" FontSize="17" VerticalAlignment="Top" Width="204.495"/>
+            <TextBox HorizontalAlignment="Left" Height="29.28" Margin="89.155,151.44,0,0" TextWrapping="Wrap" FontSize="17" VerticalAlignment="Top" Width="204.495"/>
+            <TextBox HorizontalAlignment="Left" Height="29.28" Margin="89.155,185.72,0,0" TextWrapping="Wrap" FontSize="17" VerticalAlignment="Top" Width="204.495"/>
+            <Button Content="Add" HorizontalAlignment="Left" Margin="218.65,234.95,0,0" VerticalAlignment="Top" Width="75" Click="AddButton_Click"/>
+        </Grid>
+    </Grid>
+</UserControl>

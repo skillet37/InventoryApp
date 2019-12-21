@@ -87,7 +87,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Database\DBTest.cs" />
     <Compile Include="Database\Entities\History.cs" />
     <Compile Include="Database\Entities\User.cs" />
     <Compile Include="Database\Entities\Loan.cs" />
@@ -96,7 +95,6 @@
       <DependentUpon>CheckoutView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Database\Entities\Item.cs" />
-    <Compile Include="Database\DBHandler.cs" />
     <Compile Include="Views\InventoryView.xaml.cs">
       <DependentUpon>InventoryView.xaml</DependentUpon>
     </Compile>

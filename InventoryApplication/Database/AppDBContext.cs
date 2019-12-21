@@ -19,7 +19,7 @@ namespace InventoryApplication
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            var sqliteConnectionInitializer = new SqliteDropCreateDatabaseAlways<AppDBContext>(modelBuilder);
+            var sqliteConnectionInitializer = new SqliteCreateDatabaseIfNotExists<AppDBContext>(modelBuilder);
             Database.SetInitializer(sqliteConnectionInitializer);
         }
         public DbSet<User> Users { get; set; }

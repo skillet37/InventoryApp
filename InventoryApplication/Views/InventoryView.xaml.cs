@@ -25,5 +25,10 @@ namespace InventoryApplication
         {
 
         }
+
+        private void AddItemButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

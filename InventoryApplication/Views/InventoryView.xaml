@@ -4,38 +4,88 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:InventoryApplication"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="540" d:DesignWidth="1010" Loaded="View_Loaded">
     <Grid Background="#FFD8D5D5">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="17*"/>
-            <RowDefinition Height="43*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="439*"/>
-            <ColumnDefinition Width="66*"/>
-        </Grid.ColumnDefinitions>
-        <ListView Name="inventoryList" HorizontalAlignment="Left" Height="483.72" Margin="10,46.28,0,0" VerticalAlignment="Top" Width="990" Grid.ColumnSpan="2" Grid.RowSpan="2">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Barcode" DisplayMemberBinding="{Binding SerialNo}"/>
-                    <GridViewColumn Header="Item Name" DisplayMemberBinding="{Binding Name}"/>
-                    <GridViewColumn Header="Item Type" DisplayMemberBinding="{Binding Type}"/>
-                    <GridViewColumn Header="Location" DisplayMemberBinding="{Binding Location}"/>
-                    <GridViewColumn Header="Checked Out By" DisplayMemberBinding="{Binding COBy}"/>
-                    <GridViewColumn Header="Checkout Date" DisplayMemberBinding="{Binding CODate}"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <Label Content="Filter:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.245,0.543" FontSize="16" Foreground="#FF31577E" FontFamily="Segoe UI Semibold"/>
-        <TextBox HorizontalAlignment="Left" Height="29.28" Margin="248.51,12,0,0" TextWrapping="Wrap" Text="Delete This Text" VerticalAlignment="Top" Width="121" FontSize="16" RenderTransformOrigin="-0.689,1.819"/>
-        <ComboBox HorizontalAlignment="Left" Margin="64.01,7,0,0" VerticalAlignment="Top" Width="127.5" SelectedIndex="0" FontSize="16" OpacityMask="Black" RenderTransformOrigin="0.992,0.55">
-            <ListBoxItem Content="Name"/>
-            <ListBoxItem Content="Type"/>
-            <ListBoxItem Content="Serial"/>
-            <ListBoxItem Content="Checked Out"/>
-        </ComboBox>
-        <Label Content="using" HorizontalAlignment="Left" Margin="196.51,12,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.245,0.543" FontSize="16" Width="47" Foreground="#FF31577E" FontFamily="Segoe UI Semibold"/>
+        <materialDesign:DialogHost x:Name="User_Details_Dialog" CloseOnClickAway="True">
+            <materialDesign:DialogHost.DialogContent>
+                <Grid Width="350">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="9*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
 
+                    <Grid Grid.ColumnSpan="2" Background="#FF5C99D6">
+                        <TextBlock Margin="3,10" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18" Grid.ColumnSpan="2">Create New Item</TextBlock>
+                    </Grid>
+                    <Label Grid.Row="1" Content="Barcode:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" Height="29.28" TextWrapping="Wrap" FontSize="17" Margin="0,0,10,0"/>
+                    <Label Grid.Row="2" Content="Name:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" Height="29.28" TextWrapping="Wrap" FontSize="17" Margin="0,0,10,0"/>
+                    <Label Grid.Row="3" Content="Type:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"/>
+                    <TextBox Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" Height="29.28" TextWrapping="Wrap" FontSize="17" Margin="0,0,10,0"/>
+                    <Label Grid.Row="4" Content="Location:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"/>
+                    <TextBox Grid.Row="4" Grid.Column="1" HorizontalAlignment="Stretch" Height="29.28" TextWrapping="Wrap" FontSize="17" Margin="0,0,10,0"/>
+                    <Button Grid.Row="6" Grid.ColumnSpan="2" Content="Add Item" HorizontalAlignment="Center" Margin="10" Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"/>
+                </Grid>
+            </materialDesign:DialogHost.DialogContent>
+
+            <Grid Background="#FFD8D5D5">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="10*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Filter:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Foreground="#FF31577E" FontFamily="Segoe UI Semibold"/>
+                    <ComboBox HorizontalAlignment="Left" VerticalAlignment="Center" Height="30" Width="85" SelectedIndex="0" FontSize="16" OpacityMask="Black" Margin="0,0,0,1">
+                        <ListBoxItem Content="Barcode"/>
+                        <ListBoxItem Content="Name"/>
+                        <ListBoxItem Content="Type"/>
+                    </ComboBox>
+                    <Label Content="using" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Width="47" Foreground="#FF31577E" FontFamily="Segoe UI Semibold"/>
+                    <TextBox HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="121" FontSize="16"/>
+                </StackPanel>
+
+                <Button Content="Add New Item" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="15,0" Click="AddItemButton_Click" Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}"/>
+
+                <ListView x:Name="itemList" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" FontSize="16">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Barcode" DisplayMemberBinding="{Binding ItemId}" Width="100"/>
+                            <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="200"/>
+                            <GridViewColumn Header="Type" DisplayMemberBinding="{Binding Type}" Width="150"/>
+                            <GridViewColumn Header="Location" DisplayMemberBinding="{Binding Location}" Width="210"/>
+                            <GridViewColumn Header="Checked Out" DisplayMemberBinding="{Binding CheckedOut}" Width="240"/>
+                            <GridViewColumn Width="75">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Height="30" Width="45" Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}">
+                                            <StackPanel>
+                                                <materialDesign:PackIcon VerticalAlignment="Center" HorizontalAlignment="Center" Kind="Pencil" Height="20" Width="20"/>
+                                            </StackPanel>
+                                        </Button>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
+        </materialDesign:DialogHost>
     </Grid>
 </UserControl>

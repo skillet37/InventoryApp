@@ -11,7 +11,7 @@ namespace InventoryApplication
         }
 
         [Key]
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         [Required]
         public string Name { get; set; }
         public string Rank { get; set; } = "Not Given";

@@ -26,6 +26,9 @@
                 </Grid.RowDefinitions>
 
                 <Grid Grid.ColumnSpan="2" Background="#FF5C99D6">
+                    <Grid.Effect>
+                        <DropShadowEffect BlurRadius="1" ShadowDepth="1" Color="#FFACACAC"/>
+                    </Grid.Effect>
                     <TextBlock Margin="3,10" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18" Grid.ColumnSpan="2">Create New User</TextBlock>
                 </Grid>
                 <Label Grid.Row="1" Content="ID:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"/>

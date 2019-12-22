@@ -7,6 +7,7 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="540" d:DesignWidth="1010" Loaded="View_Loaded">
+    
     <Grid Background="#FFD8D5D5">
         <materialDesign:DialogHost x:Name="User_Details_Dialog" CloseOnClickAway="True">
             <materialDesign:DialogHost.DialogContent>

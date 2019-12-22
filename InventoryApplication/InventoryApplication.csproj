@@ -87,7 +87,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Database\Entities\History.cs" />
     <Compile Include="Database\Entities\User.cs" />
     <Compile Include="Database\Entities\Loan.cs" />
     <Compile Include="Database\AppDBContext.cs" />

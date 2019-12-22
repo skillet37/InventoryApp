@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Linq;
 
 namespace InventoryApplication
 {
@@ -11,7 +12,12 @@ namespace InventoryApplication
     {
         public MainWindow()
         {
+            using (var context = new AppDBContext())
+            {
+                (from s in context.Users select s).ToList<User>();
+            }
             InitializeComponent();
+            
         }
 
         private void ButtonQuit_Click(object sender, RoutedEventArgs e)

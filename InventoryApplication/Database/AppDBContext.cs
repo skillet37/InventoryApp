@@ -25,7 +25,6 @@ namespace InventoryApplication
         public DbSet<User> Users { get; set; }
         public DbSet<Item> Items { get; set; }
         public DbSet<Loan> Loans { get; set; }
-       // public DbSet<History> Histories { get; set; }
     }
 
     public class DbConfig : DbConfiguration

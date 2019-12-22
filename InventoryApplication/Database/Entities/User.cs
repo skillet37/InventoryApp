@@ -21,6 +21,5 @@ namespace InventoryApplication
         public string Mobile { get; set; }
 
         public virtual ICollection<Loan> Loans { get; set; }
-        public virtual ICollection<History> Histories { get; set; }
     }
 }

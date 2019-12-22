@@ -30,27 +30,24 @@
     </Window.Triggers>
     <Grid Background="#FFDEDEDE">
         <Grid x:Name="GridMain" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="540" Width="1010">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
             <Frame Name="MainFrame" Source="Views\StartView.xaml"/>
         </Grid>
         <Grid Height="60" VerticalAlignment="Top" Background="#FF5C99D6">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="12*"/>
-                <ColumnDefinition Width="643*"/>
-                <ColumnDefinition Width="66*"/>
-                <ColumnDefinition Width="359*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="1" ShadowDepth="1" Color="#FFACACAC"/>
             </Grid.Effect>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="3">
-                <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Margin="10">
-                    <StackPanel Width="150">
-                        <Button Content="Help"/>
-                        <Separator/>
-                        <Button Content="Logout"/>
-                        <Button Content="Quit" Click="ButtonQuit_Click"/>
-                    </StackPanel>
-                </materialDesign:PopupBox>
+            <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="3" Margin="0,0,15,0">
+                <Button HorizontalAlignment="Left" Click="ButtonQuit_Click">
+                    <Grid>
+                        <materialDesign:PackIcon Kind="Close" Height="15" Width="15"/>
+                    </Grid>
+                </Button>
             </StackPanel>
             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" Padding="70,0,0,0" Grid.ColumnSpan="3" Margin="342.083,15.368,354.083,15.368" Grid.Column="1">Inventory Management System</TextBlock>
         </Grid>

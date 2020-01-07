@@ -1,0 +1,121 @@
+﻿<UserControl x:Class="InventoryApplication.Views.CheckoutSubView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:InventoryApplication.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="490" d:DesignWidth="1010" Loaded="View_Loaded">
+    <materialDesign:DialogHost x:Name="Barcode_Dialog" CloseOnClickAway="True">
+        <materialDesign:DialogHost.DialogContent>
+            <Grid Width="250">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid Background="#FF5C99D6">
+                <Grid.Effect>
+                    <DropShadowEffect BlurRadius="1" 
+                                      ShadowDepth="1" 
+                                      Color="#FFACACAC"/>
+                </Grid.Effect>
+                <TextBlock VerticalAlignment="Center" 
+                           Margin="5" FontSize="20" 
+                           Text="Scan a Barcode"/>
+                </Grid>
+                <TextBox Grid.Row="1" Margin="5"/>
+            </Grid>
+        </materialDesign:DialogHost.DialogContent>
+        
+        <Grid Background="#FFD8D5D5">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Margin="0,0,0,100" 
+                        Grid.Row="1" 
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center">
+                <Label FontSize="30"
+                   Content="Select a User"
+                   HorizontalAlignment="Center"/>
+                <Label FontSize="30"
+                   Content="OR"
+                   HorizontalAlignment="Center"/>
+                <Button Content="Scan Barcode" 
+                    FontSize="28" 
+                    Margin="10" 
+                    Height="45"
+                    Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}"/>
+            </StackPanel>
+
+
+            <StackPanel Orientation="Horizontal" 
+                    Grid.Column="1">
+                <Label Content="Filter:" 
+                   HorizontalAlignment="Left" 
+                   VerticalAlignment="Center" 
+                   FontSize="16" 
+                   Foreground="#FF31577E" 
+                   FontFamily="Segoe UI Semibold"/>
+                <ComboBox HorizontalAlignment="Left" 
+                      VerticalAlignment="Center" 
+                      Height="30" 
+                      Width="85" 
+                      SelectedIndex="0" 
+                      FontSize="16" 
+                      OpacityMask="Black" 
+                      Margin="0,0,0,1">
+                    <ListBoxItem Content="ID"/>
+                    <ListBoxItem Content="Name"/>
+                </ComboBox>
+                <Label Content="using" 
+                   HorizontalAlignment="Left" 
+                   VerticalAlignment="Center" 
+                   FontSize="16" Width="47" 
+                   Foreground="#FF31577E" 
+                   FontFamily="Segoe UI Semibold"/>
+                <TextBox HorizontalAlignment="Left" 
+                     Height="30" 
+                     TextWrapping="Wrap"  
+                     VerticalAlignment="Center" 
+                     Width="121" 
+                     FontSize="16"/>
+            </StackPanel>
+
+            <Grid Grid.Row="1" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <StackPanel>
+                    <ListView x:Name="userList" FontSize="16" SelectionChanged="userList_SelectionChanged">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="ID" 
+                                        DisplayMemberBinding="{Binding UserId}" 
+                                        Width="50"/>
+                                <GridViewColumn Header="Rank"
+                                                DisplayMemberBinding="{Binding Rank}"/>
+                                <GridViewColumn Header="Name" 
+                                        DisplayMemberBinding="{Binding Name}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </StackPanel>
+                <Button Name="Go_Button"
+                    Content="Go to Item Selection" 
+                    HorizontalAlignment="Right" 
+                    IsEnabled="False"
+                    Grid.Row="1"
+                    Margin="10,0"/>
+            </Grid>
+        </Grid>
+    </materialDesign:DialogHost>
+</UserControl>

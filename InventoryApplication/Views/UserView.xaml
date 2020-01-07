@@ -27,21 +27,83 @@
 
                 <Grid Grid.ColumnSpan="2" Background="#FF5C99D6">
                     <Grid.Effect>
-                        <DropShadowEffect BlurRadius="1" ShadowDepth="1" Color="#FFACACAC"/>
+                        <DropShadowEffect BlurRadius="1" 
+                                          ShadowDepth="1" 
+                                          Color="#FFACACAC"/>
                     </Grid.Effect>
-                    <TextBlock Margin="3,10" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18" Grid.ColumnSpan="2">Create New User</TextBlock>
+                    <TextBlock Margin="3,10" 
+                               Foreground="White" 
+                               HorizontalAlignment="Left" 
+                               VerticalAlignment="Center" 
+                               FontSize="18" 
+                               Grid.ColumnSpan="2">Create New User</TextBlock>
                 </Grid>
-                <Label Grid.Row="1" Content="ID:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"/>
-                <TextBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" Height="29.28" TextWrapping="Wrap" FontSize="17" Margin="0,0,10,0"/>
-                <Label Grid.Row="2" Content="Name:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"/>
-                <TextBox Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" Height="29.28" TextWrapping="Wrap" FontSize="17" Margin="0,0,10,0"/>
-                <Label Grid.Row="3" Content="Rank:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"/>
-                <TextBox Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" Height="29.28" TextWrapping="Wrap" FontSize="17" Margin="0,0,10,0"/>
-                <Label Grid.Row="4" Content="Email:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"/>
-                <TextBox Grid.Row="4" Grid.Column="1" HorizontalAlignment="Stretch" Height="29.28" TextWrapping="Wrap" FontSize="17" Margin="0,0,10,0"/>
-                <Label Grid.Row="5" Content="Mobile:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"/>
-                <TextBox Grid.Row="5" Grid.Column="1" HorizontalAlignment="Stretch" Height="29.28" TextWrapping="Wrap" FontSize="17" Margin="0,0,10,0"/>
-                <Button Grid.Row="6" Grid.ColumnSpan="2" Content="Add User" HorizontalAlignment="Center" Margin="10" Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"/>
+                <Label Grid.Row="1" 
+                       Content="ID:" 
+                       HorizontalAlignment="Left" 
+                       VerticalAlignment="Top" 
+                       FontSize="16"/>
+                <TextBox Grid.Row="1"
+                         Grid.Column="1"
+                         HorizontalAlignment="Stretch" 
+                         Height="29.28" 
+                         TextWrapping="Wrap" 
+                         FontSize="17" 
+                         Margin="0,0,10,0"/>
+                <Label Grid.Row="2" 
+                       Content="Name:"
+                       HorizontalAlignment="Left" 
+                       VerticalAlignment="Top" 
+                       FontSize="16"/>
+                <TextBox Grid.Row="2" 
+                         Grid.Column="1" 
+                         HorizontalAlignment="Stretch" 
+                         Height="29.28" 
+                         TextWrapping="Wrap" 
+                         FontSize="17" 
+                         Margin="0,0,10,0"/>
+                <Label Grid.Row="3" 
+                       Content="Rank:"
+                       HorizontalAlignment="Left" 
+                       VerticalAlignment="Top" 
+                       FontSize="16"/>
+                <TextBox Grid.Row="3" 
+                         Grid.Column="1" 
+                         HorizontalAlignment="Stretch" 
+                         Height="29.28" 
+                         TextWrapping="Wrap" 
+                         FontSize="17" 
+                         Margin="0,0,10,0"/>
+                <Label Grid.Row="4" 
+                       Content="Email:" 
+                       HorizontalAlignment="Left" 
+                       VerticalAlignment="Top" 
+                       FontSize="16"/>
+                <TextBox Grid.Row="4" 
+                         Grid.Column="1" 
+                         HorizontalAlignment="Stretch" 
+                         Height="29.28" 
+                         TextWrapping="Wrap" 
+                         FontSize="17" 
+                         Margin="0,0,10,0"/>
+                <Label Grid.Row="5" 
+                       Content="Mobile:" 
+                       HorizontalAlignment="Left" 
+                       VerticalAlignment="Top" 
+                       FontSize="16"/>
+                <TextBox Grid.Row="5" 
+                         Grid.Column="1" 
+                         HorizontalAlignment="Stretch" 
+                         Height="29.28" 
+                         TextWrapping="Wrap"
+                         FontSize="17"
+                         Margin="0,0,10,0"/>
+                <Button Grid.Row="6"
+                        Grid.ColumnSpan="2" 
+                        Content="Add User" 
+                        HorizontalAlignment="Center" 
+                        Margin="10" 
+                        Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"/>
             </Grid>
         </materialDesign:DialogHost.DialogContent>
         <Grid Background="#FFD8D5D5">
@@ -55,19 +117,55 @@
             </Grid.ColumnDefinitions>
 
             <StackPanel Orientation="Horizontal">
-                <Label Content="Filter:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Foreground="#FF31577E" FontFamily="Segoe UI Semibold"/>
-                <ComboBox HorizontalAlignment="Left" VerticalAlignment="Center" Height="30" Width="85" SelectedIndex="0" FontSize="16" OpacityMask="Black" Margin="0,0,0,1">
+                <Label Content="Filter:" 
+                       HorizontalAlignment="Left" 
+                       VerticalAlignment="Center" 
+                       FontSize="16" 
+                       Foreground="#FF31577E" 
+                       FontFamily="Segoe UI Semibold"/>
+                <ComboBox HorizontalAlignment="Left" 
+                          VerticalAlignment="Center" 
+                          Height="30" 
+                          Width="85" 
+                          SelectedIndex="0"
+                          FontSize="16"
+                          OpacityMask="Black" 
+                          Margin="0,0,0,1">
                     <ListBoxItem Content="ID"/>
                     <ListBoxItem Content="Name"/>
                     <ListBoxItem Content="Has Items"/>
                 </ComboBox>
-                <Label Content="using" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Width="47" Foreground="#FF31577E" FontFamily="Segoe UI Semibold"/>
-                <TextBox HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="121" FontSize="16"/>
+                <Label Content="using" 
+                       HorizontalAlignment="Left" 
+                       VerticalAlignment="Center" 
+                       FontSize="16" 
+                       Width="47" 
+                       Foreground="#FF31577E" 
+                       FontFamily="Segoe UI Semibold"/>
+                <TextBox HorizontalAlignment="Left" 
+                         Height="30" 
+                         TextWrapping="Wrap" 
+                         Text="" 
+                         VerticalAlignment="Center" 
+                         Width="121" 
+                         FontSize="16"/>
             </StackPanel>
 
-            <Button Content="Add New User" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="15,0" Click="AddUserButton_Click" Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}"/>
+            <Button Content="Add New User" 
+                    Grid.Column="1" 
+                    HorizontalAlignment="Right" 
+                    VerticalAlignment="Center" 
+                    Margin="15,0"
+                    Click="AddUserButton_Click" 
+                    Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}"/>
 
-            <ListView x:Name="userList" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" FontSize="16">
+            <ListView x:Name="userList" 
+                      HorizontalAlignment="Left" 
+                      VerticalAlignment="Top" 
+                      Grid.Row="1" 
+                      Grid.Column="0" 
+                      Grid.ColumnSpan="2" 
+                      FontSize="16">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="ID" DisplayMemberBinding="{Binding UserId}" Width="50"/>
@@ -79,9 +177,15 @@
                         <GridViewColumn Width="75">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button Height="30" Width="45" Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}">
+                                    <Button Height="30" 
+                                            Width="45" 
+                                            Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}">
                                         <StackPanel>
-                                            <materialDesign:PackIcon VerticalAlignment="Center" HorizontalAlignment="Center" Kind="Pencil" Height="20" Width="20"/>
+                                            <materialDesign:PackIcon VerticalAlignment="Center" 
+                                                                     HorizontalAlignment="Center" 
+                                                                     Kind="Pencil" 
+                                                                     Height="20" 
+                                                                     Width="20"/>
                                         </StackPanel>
                                     </Button>
                                 </DataTemplate>
